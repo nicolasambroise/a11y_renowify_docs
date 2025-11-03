@@ -404,6 +404,24 @@
 **Sélecteur** :
 <code>a</code>
 
+### 03-P. Formalisme des liens de téléchargement
+
+**Description** : Les liens de téléchargement doivent respecter la nomenclature : name (FR, Pdf ,poids)
+
+**Criticité** : Bonne pratique (Jaune)
+
+**Sélecteur** :
+<code>a</code>
+
+### 03-Q Pas 2 liens avec un contenu identique et des cibles différentes
+
+**Description** : Présence de liens avec un contenu identique (titre + aria-label) et des cibles différentes
+
+**Criticité** : Critique (Rouge)
+
+**Sélecteur** :
+<code>a[href]</code>
+
 ## 4. Formulaire et Autocomplete
 
 ### 04-A. Autocomplete sur les champs génériques
@@ -563,6 +581,25 @@
 <code>input[type='text'].datepicker:not([aria-describedby]), input[type='text'][pattern='([0-9]{2}-){2}[0-9]{4}']:not([aria-describedby])</code>
 
 **Commentaire** : On ne test ici que le datepicker avec type="text". En effet le datepicker natif (avec type="date") ne nécessite pas d'indication de format car celui-ci est géré par le navigateur.
+
+### 04-O. Type pertinent sur les champs de formulaire
+
+**Description** : Vérification que l'attribut type présent sur les champs input correspond à la valeur attendue.
+
+**Criticité** : Critique (Rouge)
+
+**Sélecteur** :
+<code>input[name="email"]:not([type="email"]),input[name="tel"]:not([type="tel"]), input[name="phone"]:not([type="tel"]),input[name*="date"]:not([type="date"])</code>
+
+### 04-P - Attribut max-lenght sur les input
+
+**Description** : Présence d'un attribut max-lenght sur un champ de saisi. Cela peut poser des problèmes pour le copier/coller de valeur.
+
+**Criticité** : Bonne pratique (Jaune)
+
+**Sélecteur** :
+<code>input[max-lenght],textarea[max-lenght]</code>
+
 
 ## 5. Element Obligatoire
 
@@ -763,6 +800,23 @@
 
 **Sélecteur** :
 <code>title</code>
+
+### 05-S - Formalisme du nom de domaine
+
+**Description** :Vérifier que l'URL respecte bien le formalisme des noms de domaine de l'état (Par exemple, en *.public.lu)
+
+**Criticité** : Bonne pratique (Jaune)
+
+**Filtre** : Site CTIE
+
+### 05-T. Contenu textuel directement dans une div
+
+**Description** : Absence de balise de texte autour d'un texte
+
+**Criticité** : Bonne pratique (Jaune)
+
+**Sélecteur** :
+<code>div, section</code>
 
 ## 6. Structure de l'information
 
@@ -1004,7 +1058,7 @@
 **Sélecteur** :
 <code>.basket</code>
 
-### 06-T Structure du composant Localnav
+### 06-U Structure du composant Localnav
 
 **Description** : La localnav doit être dans une balise &lt;nav role=’navigation’&gt; avec un attribut aria_labelledby qui cible le h2 précèdent ses différents items de la liste &lt;ul&gt;.
 
@@ -1097,6 +1151,61 @@
 
 **Sélecteur** :
 <code>nav#headernav ul.nav--primary > .nav-item</code>
+
+### 07-H Nombre d'éléments dans les sous rubriques du menu
+
+**Description** : Présence d'un sous-menu contenant moins de 2 éléments dans le menu de navigation principale
+
+**Criticité** : Critique (Rouge)
+
+**Filtre** : Développeur + Site AEM
+
+**Sélecteur** :
+<code>header nav .nav-item.has-subnav > ul</code>
+
+### 07-I. Les informations sont placées de manieres exclusive dans l'arborescence du site
+
+**Description** : Nom de menu ou de sous-menu en double dans la navigation principale
+
+**Criticité** : Bonne pratique (Jaune)
+
+**Filtre** : Développeur + Site AEM
+
+**Sélecteur** :
+<code>.nav-item,.subnav-item</code>
+
+### 07-J La balise mark est accompagné d'un soulignement pointillé
+
+**Description** : Le terme recherché (balise mark) doit être mis en relief avec un soulignement pointillé
+
+**Criticité** : Bonne pratique (Jaune)
+
+**Filtre** : Développeur + Site AEM
+
+**Sélecteur** :
+<code>mark</code>
+
+### 07-K. Le logo Renow dans le footer redirige vers renow.public.lu
+
+**Description** : Vérification de la conformité des sous-menus
+
+**Criticité** : Bonne pratique (Jaune)
+
+**Filtre** : Développeur + Site AEM
+
+**Sélecteur** :
+<code>footer .footer__copyright a.renow[href="https://renow.public.lu"] img[alt="Renow"]</code>
+
+### 07-L Présence d'une police de substitution générique
+
+**Description** : Le dernier élément de substitution dans font-family doit être une famille générique : "serif" ou "sans-serif"
+
+**Criticité** : Bonne pratique (Jaune)
+
+**Filtre** : Développeur
+
+**Sélecteur** :
+<code>body,h1,h2,h3,p,li,strong,em,a,dt,dd,span</code>
 
 ## 8. Tableau
 
@@ -1225,6 +1334,17 @@
 **Sélecteur** :
 <code>a, button, input, select, details, textarea, [tabindex="0"], [tabindex="-1"]</code>
 
+### 09-G Absence des items obligatoire sur la page d'erreur (Accueil, Search, plan, contact)
+
+**Description** : La taille des éléments interactifs minimum attendue est de 24px par 24px (marges comprises)
+
+**Criticité** : Bonne pratique (Jaune)
+
+**Référence** : [WCAG 2.2 SC258](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html), [Opquast 181](https://checklists.opquast.com/fr/assurance-qualite-web/la-taille-des-elements-cliquables-est-suffisante)
+
+**Sélecteur** :
+<code>a, button, input, select, details, textarea, [tabindex="0"], [tabindex="-1"]</code>
+
 
 ## 10. Balises/attributs obsolètes
 
@@ -1261,7 +1381,7 @@
 
 **Commentaire** : Des libs utilisent la balise i pour l'ajout d'icône.
 
-### 10-C. Attribut de présentation
+### 10-D. Attribut de présentation
 
 **Description** : Présence d'attributs HTML servant à la présentation de l'information
 
@@ -1372,6 +1492,23 @@
 
 **Commentaire** : Le double espace est considéré comme une erreur d'inattention
 
+### 13-B. Présence de déclaration de taille de texte
+
+**Description** : Taille de police recommandée pour le texte principal : 16px sur desktop et de 14px sur mobile Taille de police minimum recommandée pour le texte secondaire : 12px
+
+**Criticité** : Bonne pratique (Jaune)
+
+**Sélecteur** :
+<code>main .cmp-section *:not(.cmp-contentbox) > .cmp-text p</code>
+
+### 13-C. Element obligatoire dans la déclaration d'accessibilité
+
+**Description** : Vérifier qu'il n'y a pas d'information manquante dans la déclaration d'accessibilité
+
+**Criticité** : Critique (Rouge)
+
+**Commentaire** : Les informations obligatoires vérifiées ici, sont le nom de l'organisme déclarant, l'url du site, l'état de conformité, la date de la déclatation ainsi que l'email de contact.
+
 ## 14. Titres
 
 ### 14-A Heading avec role
@@ -1480,3 +1617,14 @@
 
 **Sélecteur** :
 <code>a[href$=".doc"], a[href$=".docx"], a[href$=".xls"], a[href$=".xlsx"], a[href$=".ppt"], a[href$=".pptx"], a[href$=".txt"]</code>
+
+### 15-G Présence de la modale de cookie
+
+**Description** : Vérifiez la présence de la modale de cookie Orejime
+
+**Criticité** : Bonne pratique (Jaune)
+
+**Filtre** : Développeur + Site AEM
+
+**Sélecteur** :
+<code>#orejime</code>
