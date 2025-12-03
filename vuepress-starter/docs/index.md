@@ -3,8 +3,8 @@ home: true
 title: Home
 heroImage: ./images/renow-180.png
 actions:
-  - text: Ouvrir le Chorme Wev Store
-    link: https://chromewebstore.google.com/detail/...
+  - text: Ouvrir le Chorme Store
+    link: https://chromewebstore.google.com/detail/renowify-assistant-access/mkhdnbegllcgboofnojblclnngpecijn
     type: primary
 
   - text: Documentation
@@ -13,11 +13,11 @@ actions:
 
 features:
   - title: Check Access - Vérification automatique
-    details: Possibilité d'executer une centaine de tests unitaires sur la page en cours de consultation et d'obtenir un récapitulatif dans la barre latérale.
+    details: En un clic, Renowify exécute plus d’une centaine de tests unitaires sur la page en cours et affiche un récapitulatif clair et structuré dans une barre latérale.
   - title: Outils - Vérification manuelle
-    details: Plusieurs outils sont disponibles pour vérifier manuellement quelques critères d'accessibilité.
+    details: L’extension propose une série d’outils qui vous permettent de vérifier visuellement certains critères souvent négligés ou difficiles à détecter.
   - title: Cypress / Sélénium
-    details: Le plugin Renowify peut être appelé par d'autres outils pour générer automatiquement un rapport sur un large échantillon de pages.
+    details: Renowify peut être appelé par d'autres logiciels pour générer automatiquement des rapports sur un large échantillon de pages.
 
 footer: MIT Licensed | Copyright © 2025 Renowify
 ---

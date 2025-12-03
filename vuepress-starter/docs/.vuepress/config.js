@@ -6,7 +6,7 @@ export default defineUserConfig({
   lang: 'fr',
   base: '/renowify_docs/',
   title: 'Renowify',
-  description: 'Un plugin pour aider à l\'accessibilité numérique',
+  description: 'Votre allié pour un web plus accessible',
 
   theme: defaultTheme({
     logo: './images/renow-48.png',
